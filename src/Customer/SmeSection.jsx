@@ -10,7 +10,7 @@ import homeloan from "../assets/homeloan.jpg";
 import laptopicon from "../assets/laptop.svg";
 import { Box, Center, Flex, Grid, Image, Link, Text } from "@chakra-ui/react";
 
-export default function SmeSection() {
+export default function SmeSection({ language }) {
   return (
     <Box mt={16} px={[4, 8, 16, 20]}>
       <Box
@@ -23,8 +23,7 @@ export default function SmeSection() {
       >
         <Flex alignItems="center">
           <Text fontWeight="medium" color="dark">
-            {" "}
-            Best Auctions{" "}
+            {language === "en" ? "Best Auctions" : "أفضل المزادات"}
           </Text>
           <Box ml={2}>
             <Image h="auto" ml="1rem" maxW="40px" src={laptopicon} alt="" />
@@ -55,12 +54,10 @@ export default function SmeSection() {
               color="gray.800"
               _dark={{ color: "white" }}
             >
-              {" "}
-              Dream Property{" "}
+              {language === "en" ? "Dream Property" : "حلم الملكية"}
             </Text>
             <Text fontSize="sm" color="gray.700" _dark={{ color: "gray.400" }}>
-              {" "}
-              Just share your requirements and connect directly with our brokers
+              {language === "en" ? "Just share your requirements and connect directly with our brokers" : "ما عليك سوى مشاركة متطلباتك والتواصل مباشرة مع وسطاءنا"}
             </Text>
             <Center mt={3}>
               <Link href="/mastery-hub" display="inline-flex" py={2}>
@@ -92,11 +89,11 @@ export default function SmeSection() {
               _dark={{ color: "white" }}
             >
               {" "}
-              Real Estate Investment{" "}
+              {language === "en" ? "Real Estate Investment" : "استثمار عقاري"}
             </Text>
             <Text fontSize="sm" color="gray.700" _dark={{ color: "gray.400" }}>
               {" "}
-              Discover a wide range of masterplans, view the available plots with their prices, and start investing now.
+              {language === "en" ? "Discover a wide range of masterplans, view the available plots with their prices, and start investing now." : "اكتشف مجموعة واسعة من المخططات الرئيسية، واطلع على قطع الأراضي المتاحة بأسعارها، وابدأ الاستثمار الآن."}
             </Text>
             <Center mt={3}>
               <Link href="/preparing-cyber" display="inline-flex" py={2}>
@@ -127,10 +124,10 @@ export default function SmeSection() {
               color="gray.800"
               _dark={{ color: "white" }}
             >
-              Homes Loans Alinma Bank
+              {language === "en" ? "Homes Loans Alinma Bank" : "القروض السكنية مصرف الإنماء"}
             </Text>
             <Text fontSize="sm" color="gray.700" _dark={{ color: "gray.400" }}>
-              Following the issue of the Net Systems <br /> (NIS) Regulations...
+              {language === "en" ? "In Dubai, the financial landscape is stringent when it comes to loans. To qualify for a home loan in Dubai, you need to have a salary of at least 10,000 AED as a national, and 15,000 AED if you're an expat." : "في دبي، يتسم المشهد المالي بالصرامة عندما يتعلق الأمر بالقروض. للتأهل للحصول على قرض سكني في دبي، يجب أن يكون لديك راتب لا يقل عن 10,000 درهم إماراتي كمواطن، و15,000 درهم إماراتي إذا كنت وافداً."}
             </Text>
             <Center mt={3}>
               <Link href="/certification-process" display="inline-flex" py={2}>

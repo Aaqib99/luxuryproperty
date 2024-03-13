@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { CarouselDefault } from "./CarouselDefault";
 import verifiedicon from "../assets/verifiedicon.jpg"
 
-function HeroSection() {
+function HeroSection({ language }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
@@ -19,6 +19,7 @@ function HeroSection() {
       alignItems="center"
       justifyContent={["center", "space-between"]}
       overflow="hidden"
+      marginTop={"6rem"}
     >
       <Box
         maxW={["100%", "50%"]}
@@ -35,16 +36,16 @@ function HeroSection() {
             color={"#CFB05C"}
             as="h3"
           >
-            Verified Property
+            {language === "en" ? "Verified Property" : "ملكية تم التحقق منها"}
           </Heading>
           <Box ml={2}>
             <img src={verifiedicon} alt="Verified Icon" style={{ width: "70px", height: "70px", marginLeft: "20px" }} />
           </Box>
         </Flex>
         <Text mb={6} color="blackAlpha.700">
-          At website-name, our mission is to significantly improve the experience of finding properties in Dubai.
-          The problems we faced inspired us to put our heads together to develop the ‘bigger picture’ that would
-          lead you on an immersive journey to learn about Dubai's communities and properties.
+          {language === "en"
+            ? "At website-name, our mission is to significantly improve the experience of finding properties in Dubai. The problems we faced inspired us to put our heads together to develop the ‘bigger picture’ that would lead you on an immersive journey to learn about Dubai's communities and properties."
+            : "في موقع اسم الموقع، تتمثل مهمتنا في تحسين تجربة العثور على العقارات في دبي بشكل كبير. لقد ألهمتنا المشكلات التي واجهناها لتجميع رؤوسنا معًا لتطوير لصورة الأكبر"}
         </Text>
         <Button
           bg={"#CFB05C"}
@@ -58,7 +59,7 @@ function HeroSection() {
           rounded="md"
           onClick={handleButtonClick}
         >
-          Explore All Properties
+          {language === "en" ? "View Properties" : "عرض خصائص"}
         </Button>
       </Box>
       <Box w={["100%", "50%"]} position="relative">

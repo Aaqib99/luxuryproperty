@@ -9,7 +9,7 @@ import twitter from "../assets/cyber2.svg";
 import linkedin from "../assets/cyber2.svg";
 import web from "../assets/cyber2.svg";
 
-const Footer = () => {
+const Footer = ({ language }) => {
   return (
     <>
       {/* ashdjas */}
@@ -51,8 +51,9 @@ const Footer = () => {
               <Box width={{ base: "100%", md: "70%" }}>
                 <Image src={bluelogo} alt="" />
                 <Text mt={8} ml={"2rem"}>
-                  {" "}
-                  Welcome to Real-Estate, our mission is to significantly improve the experience of finding properties in Dubai.
+                  {language === "en"
+                    ? "Welcome to Real-Estate, our mission is to significantly improve the experience of finding properties in Dubai."
+                    : "مرحبًا بك في العقارات، مهمتنا هي تحسين تجربة العثور على العقارات في دبي بشكل كبير."}
                 </Text>
                 <Box
                   display="flex"
@@ -89,8 +90,7 @@ const Footer = () => {
                   color={"#A07B3F"}
                   justifyContent={{ base: "center", md: "start" }}
                 >
-                  {" "}
-                  APARTMENTS{" "}
+                  {language === "en" ? "APARTMENTS" : "الشقق"}
                 </Heading>
                 <Text mt="4">
                   {" "}
@@ -99,8 +99,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Apartments 1{" "}
+                    {language === "en" ? "Apartments 1" : "الشقق 1"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -112,7 +111,7 @@ const Footer = () => {
                     _dark={{ color: "neutral.200" }}
                   >
                     {" "}
-                    Apartments 2{" "}
+                    {language === "en" ? "Apartments 2" : "الشقق 2"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -122,8 +121,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Apartments 3{" "}
+                    {language === "en" ? "Apartments 3" : "الشقق 3"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -133,8 +131,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Apartments 4{" "}
+                    {language === "en" ? "Apartments 4" : "4لشقق 1"}
                   </Link>{" "}
                 </Text>
                 <Heading
@@ -147,8 +144,7 @@ const Footer = () => {
                   color={"#A07B3F"}
                   justifyContent={{ base: "center", md: "start" }}
                 >
-                  {" "}
-                  Villas{" "}
+                  {language === "en" ? "VILLAS" : "فيلات"}
                 </Heading>
                 <Text mt="2">
                   {" "}
@@ -157,8 +153,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Villas 1{" "}
+                    {language === "en" ? "Villas 1" : "1 فيلات"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -168,8 +163,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Villas 2{" "}
+                    {language === "en" ? "Villas 2" : "2 فيلات"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -179,8 +173,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Villas 3{" "}
+                    {language === "en" ? "Villas 3" : "3 فيلات"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -190,8 +183,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Villas 4{" "}
+                    {language === "en" ? "Villas 4" : "4 فيلات"}
                   </Link>{" "}
                 </Text>
               </Box>
@@ -205,8 +197,7 @@ const Footer = () => {
                   color={"#A07B3F"}
                   justifyContent={{ base: "center", md: "start" }}
                 >
-                  {" "}
-                  Regions{" "}
+                  {language === "en" ? "REGIONS" : "المناطق"}
                 </Heading>
                 <Text mt="4">
                   {" "}
@@ -215,8 +206,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Riyadh{" "}
+                    {language === "en" ? "Riyadh" : "الرياض"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -226,8 +216,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Jiddah{" "}
+                    {language === "en" ? "Jiddah" : "جدة"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -237,8 +226,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Makkah
+                    {language === "en" ? "Makkah" : "مكه"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -248,8 +236,7 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
-                    {" "}
-                    Dammam
+                    {language === "en" ? "Dammam" : "الدمام"}
                   </Link>{" "}
                 </Text>
                 <Heading
@@ -262,8 +249,9 @@ const Footer = () => {
                   color={"#A07B3F"}
                   justifyContent={{ base: "center", md: "start" }}
                 >
+                  {language === "en" ? "Commercial Homes" : "المنازل التجارية"}
                   {" "}
-                  Commercial Homes{" "}
+                  {" "}
                 </Heading>
                 <Text mt="2">
                   {" "}
@@ -272,8 +260,9 @@ const Footer = () => {
                     color="neutral.600"
                     _dark={{ color: "neutral.200" }}
                   >
+                    {language === "en" ? "Home 1" : "الصفحة الرئيسية 1"}
                     {" "}
-                    Home 1{" "}
+                    {" "}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -284,7 +273,17 @@ const Footer = () => {
                     _dark={{ color: "neutral.200" }}
                   >
                     {" "}
-                    Home 2{" "}
+                    {language === "en" ? "Home 2" : "الصفحة الرئيسية 2"}
+                  </Link>{" "}
+                </Text>
+                <Text mt="2">
+                  {" "}
+                  <Link
+                    href="#!"
+                    color="neutral.600"
+                    _dark={{ color: "neutral.200" }}
+                  >
+                    {language === "en" ? "Home 3" : "الصفحة الرئيسية 3"}
                   </Link>{" "}
                 </Text>
                 <Text mt="2">
@@ -295,18 +294,7 @@ const Footer = () => {
                     _dark={{ color: "neutral.200" }}
                   >
                     {" "}
-                    Home 3{" "}
-                  </Link>{" "}
-                </Text>
-                <Text mt="2">
-                  {" "}
-                  <Link
-                    href="#!"
-                    color="neutral.600"
-                    _dark={{ color: "neutral.200" }}
-                  >
-                    {" "}
-                    Home 4{" "}
+                    {language === "en" ? "Home 4" : "الصفحة الرئيسية 4"}
                   </Link>{" "}
                 </Text>
               </Box>
@@ -321,7 +309,8 @@ const Footer = () => {
                   justifyContent={{ base: "center", md: "start" }}
                 >
                   {" "}
-                  HAVE A QUESTION?{" "}
+                  {language === "en" ? "HAVE A QUESTION?" : "لدي سؤال؟"}
+                  {" "}
                 </Heading>
                 <Box
                   alignItems={{ base: "center", md: "start" }}
@@ -347,7 +336,7 @@ const Footer = () => {
                       <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
                     </svg>
                   </Box>
-                  Vision Tower - 10th Floor - Al Khaleej Al Tejari 1 St - Business Bay - Dubai - United Arab Emirates
+                  {language === "en" ? "Vision Tower - 10th Floor - Al Khaleej Al Tejari 1 St - Business Bay - Dubai - United Arab Emirates" : "برج فيجن - الطابق العاشر - شارع الخليج التجاري 1 - الخليج التجاري - دبي - الإمارات العربية المتحدة"}
                 </Box>
                 <Box
                   alignItems={{ base: "center", md: "start" }}
@@ -411,7 +400,8 @@ const Footer = () => {
                       style={{ marginBottom: 2, fontWeight: "semibold" }}
                     >
                       {" "}
-                      Get Updates{" "}
+                      {language === "en" ? "Get Updates" : "احصل على التحديثات"}
+                      {" "}
                     </label>
                     <Box
                       flex="1"
@@ -455,7 +445,7 @@ const Footer = () => {
             color="white"
             marginX="auto" // This is the key for centering horizontally
           >
-            <Text>© 2023 Copyright REAL-ESTATE. All rights reserved</Text>
+            <Text>{language === "en" ? "© 2023 Copyright REAL-ESTATE. All rights reserved" : "© 2023 حقوق النشر للعقارات. كل الحقوق محفوظة"}</Text>
           </Box>
         </Box>
       </Box>

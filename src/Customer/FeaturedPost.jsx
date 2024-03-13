@@ -15,6 +15,7 @@ function FeaturedPost(props) {
         <Box p={4} flex={1}>
           <Heading as="h2" size="lg" color="#CFB05C" fontWeight="medium" mb={2}>
             {post.title}
+            {/* {post.language === "en" ? "AI Powered Platform" : "منصة مدعومة بالذكاء الاصطناعي"} */}
           </Heading>
           <Text fontSize="md" mb={4}>
             {post.description}

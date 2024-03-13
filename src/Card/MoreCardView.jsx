@@ -1,9 +1,6 @@
 import React from "react";
-import { Box, Center, Flex, Grid, Image, Link, Text, Button, Icon } from "@chakra-ui/react";
+import { Box, Flex, Grid, Image, Text, Button, Icon } from "@chakra-ui/react";
 import dream from "../assets/5a.jpg";
-import realestate from "../assets/realestate.jpg";
-import smeicon from "../assets/smeicon.svg";
-import homeloan from "../assets/homeloan.jpg";
 import laptopicon from "../assets/laptop.svg";
 import { FaWhatsapp, FaPhone } from 'react-icons/fa';
 import bedicon from "../assets/bed.svg";
@@ -11,12 +8,10 @@ import land from "../assets/land.svg";
 import newicon from "../assets/new.svg";
 import bathroom from "../assets/bathroom.svg";
 import { FaHeart } from 'react-icons/fa';
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
-
-
-export default function MoreCardView() {
+export default function MoreCardView({ language }) {
     const navigate = useNavigate();
     const titleclick = () => {
         navigate("/some-other-page");
@@ -33,7 +28,7 @@ export default function MoreCardView() {
                 <Flex alignItems="center">
                     <Text fontWeight="medium" color="dark">
                         {" "}
-                        Similar Properties{" "}
+                        {language === "en" ? "Similar Properties" : "العقارات المماثلة"}
                     </Text>
                     <Box ml={2}>
                         <Image h="auto" ml="1rem" maxW="40px" src={laptopicon} alt="" />
@@ -52,11 +47,7 @@ export default function MoreCardView() {
                     shadow="md"
                     _dark={{ bg: "gray.800", borderColor: "gray.700" }}
                 >
-                    {/* <Box borderTopRadius="lg" overflow="hidden">
-                        <Image mx="auto" w="100%" h="auto" src={dream} alt="" />
-                    </Box> */}
                     <Box position="relative" borderTopRadius="lg" overflow="hidden">
-                        {/* Featured Plus text */}
                         <Box
                             position="absolute"
                             top="3"
@@ -70,9 +61,8 @@ export default function MoreCardView() {
                             fontWeight="bold"
                             zIndex="1"
                         >
-                            FEATURED PLUS
+                            {language === "en" ? "FEATURED PLUS" : "ميزة إضافية"}
                         </Box>
-                        {/* Villa text */}
                         <Box
                             position="absolute"
                             top="11rem"
@@ -86,14 +76,12 @@ export default function MoreCardView() {
                             fontWeight="bold"
                             zIndex="1"
                         >
-                            VILLA
+                            {language === "en" ? "VILLA" : "فيلا"}
                         </Box>
-                        {/* Heart icon */}
                         <Box
                             position="absolute"
                             top="2"
                             right="2"
-                            // transform="translate(50%, -50%)"
                             bg="#FFEFD5"
                             color="blue"
                             p={2}
@@ -102,7 +90,6 @@ export default function MoreCardView() {
                         >
                             <Icon as={FaHeart} />
                         </Box>
-                        {/* Image */}
                         <Image mx="auto" w="100%" h="auto" src={dream} alt="" />
                     </Box>
 
@@ -116,23 +103,22 @@ export default function MoreCardView() {
                             _dark={{ color: "white" }}
                             onClick={titleclick}
                         >
-                            Apartment 137.08 SQM with 4 Bedrooms
+                            {language === "en" ? "Apartment 137.08 SQM with 4 Bedrooms" : "شقة 137.08 متر مربع مع 4 غرف نوم"}
                         </Text>
                         <Box
-                            bg="#FFEFD5" // Light yellow background color
-                            rounded="md" // Rounded corners
-                            p={1} // Padding
-                            display="inline-block" // Ensure inline display
+                            bg="#FFEFD5"
+                            rounded="md"
+                            p={1}
+                            display="inline-block"
                         >
                             <Text fontSize="sm" color="gray.700" _dark={{ color: "gray.400" }}>
-                                Qurtubah, East Riyadh, Riyadh
+                                {language === "en" ? "Qurtubah, East Riyadh, Riyadh" : "قرطبة، الشرق، الرياض"}
                             </Text>
                         </Box>
                         <Flex alignItems="center" mt={5}>
                             <Box
                                 rounded="md"
                                 p={1}
-                                // ml={2}
                                 display="flex"
                                 alignItems="center"
                             >
@@ -162,7 +148,7 @@ export default function MoreCardView() {
                             >
                                 <img src={newicon} alt="Bed Icon" width="25" height="25" />
                                 <Text fontSize="sm" color="gray.700" _dark={{ color: "gray.400" }} ml={1}>
-                                    New
+                                    {language === "en" ? "New" : "جديد"}
                                 </Text>
                             </Box>
                             <Box
@@ -180,7 +166,7 @@ export default function MoreCardView() {
                         </Flex>
 
                         <Text fontSize="12px" color="gray.500" mt={3}>
-                            Updated Few Hours ago
+                            {language === "en" ? "Updated Few Hours ago" : "تحديث قبل ساعات قليلة"}
                         </Text>
                         <Text fontSize="lg" color="gray.700" mt={3}>
                             Rs. <Box as="span" fontWeight="bold">4M</Box>
@@ -192,7 +178,7 @@ export default function MoreCardView() {
                                 mr={3}
                                 display={{ base: "none", md: "flex" }}
                             >
-                                Request Call Back
+                                {language === "en" ? "Request Call Back" : "طلب اتصال مرة أخرى"}
                             </Button>
                             <Button
                                 variant="outline"

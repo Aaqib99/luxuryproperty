@@ -2,7 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { FaWifi, FaCar, FaArrowUp } from 'react-icons/fa';
 import LocationNearby from "./LocationNearBy";
 
-export default function Amenities() {
+export default function Amenities({ language }) {
     return (
         <>
             <Box
@@ -13,23 +13,23 @@ export default function Amenities() {
                 p={4}
                 mt={4}
             >
-                <Text fontSize="x-large" mt={"1rem"}>Amenities</Text>
+                <Text fontSize="x-large" mt={"1rem"}>{language === "en" ? "Amenities" : "الميزات"}</Text>
                 <Flex alignItems="center" mt={"1rem"}>
-                    <Flex alignItems="center" >
+                    <Flex alignItems="center">
                         <FaWifi />
-                        <Text ml={2}>Smart Home System</Text>
+                        <Text ml={2}>{language === "en" ? "Smart Home System" : "نظام منزل ذكي"}</Text>
                     </Flex>
                     <Flex alignItems="center" ml={"2rem"}>
                         <FaCar />
-                        <Text ml={2}>Underground Parking</Text>
+                        <Text ml={2}>{language === "en" ? "Underground Parking" : "موقف سيارات تحت الأرض"}</Text>
                     </Flex>
-                    <Flex alignItems="center" ml={"2rem"}   >
+                    <Flex alignItems="center" ml={"2rem"}>
                         <FaArrowUp />
-                        <Text ml={2}>Elevator</Text>
+                        <Text ml={2}>{language === "en" ? "Elevator" : "مصعد"}</Text>
                     </Flex>
                 </Flex>
             </Box>
-            <LocationNearby />
+            <LocationNearby language={language}/>
         </>
     );
 }

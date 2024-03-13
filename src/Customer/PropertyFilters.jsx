@@ -3,7 +3,7 @@ import { FaBuilding, FaFilter, FaUsers } from 'react-icons/fa';
 import PropertyInfo from "./PropertyInfo";
 import StreetInformation from "./StreetInformation";
 
-export default function PropertyFilters() {
+export default function PropertyFilters({ language }) {
     return (
         <>
 
@@ -20,36 +20,37 @@ export default function PropertyFilters() {
             >
                 <Flex alignItems="center">
                     <Icon as={FaBuilding} color="gray.500" mr={2} boxSize={6} />
-                    <Text fontSize="x-large">Units (20)</Text>
+                    <Text fontSize="x-large">{language === "en" ? "Units (20)" : "وحدات (20)"}</Text>
                 </Flex>
                 <Flex alignItems="center">
-                    <Select variant="outline" placeholder="Buy" mr={2}>
-                        <option value="buy">Buy</option>
-                        <option value="rent">Rent</option>
+                    <Select variant="outline" placeholder={language === "en" ? "Buy" : "شراء"} mr={2}>
+                        <option value="buy">{language === "en" ? "Buy" : "شراء"}</option>
+                        <option value="rent">{language === "en" ? "Rent" : "إيجار"}</option>
                     </Select>
-                    <Select variant="outline" placeholder="Type" mr={2}>
-                        <option value="apartment">Apartment</option>
-                        <option value="villa">Villa</option>
-                        <option value="townhouse">Townhouse</option>
+                    <Select variant="outline" placeholder={language === "en" ? "Type" : "النوع"} mr={2}>
+                        <option value="apartment">{language === "en" ? "Apartment" : "شقة"}</option>
+                        <option value="villa">{language === "en" ? "Villa" : "فيلا"}</option>
+                        <option value="townhouse">{language === "en" ? "Townhouse" : "فيلا متصلة"}</option>
                     </Select>
-                    <Select variant="outline" placeholder="Bedroom" mr={2}>
-                        <option value="1">1 Bedroom</option>
-                        <option value="2">2 Bedrooms</option>
-                        <option value="3">3 Bedrooms</option>
-                        <option value="4">4 Bedrooms</option>
+                    <Select variant="outline" placeholder={language === "en" ? "Bedroom" : "عدد الغرف"} mr={2}>
+                        <option value="1">{language === "en" ? "1 Bedroom" : "1 غرفة نوم"}</option>
+                        <option value="2">{language === "en" ? "2 Bedrooms" : "2 غرفة نوم"}</option>
+                        <option value="3">{language === "en" ? "3 Bedrooms" : "3 غرف نوم"}</option>
+                        <option value="4">{language === "en" ? "4 Bedrooms" : "4 غرف نوم"}</option>
                     </Select>
-                    <Select variant="outline" placeholder="Filters" mr={2}>
-                        <option value="feature1">Feature 1</option>
-                        <option value="feature2">Feature 2</option>
-                        <option value="feature3">Feature 3</option>
+                    <Select variant="outline" placeholder={language === "en" ? "Filters" : "مرشحات"} mr={2}>
+                        <option value="feature1">{language === "en" ? "Feature 1" : "ميزة 1"}</option>
+                        <option value="feature2">{language === "en" ? "Feature 2" : "ميزة 2"}</option>
+                        <option value="feature3">{language === "en" ? "Feature 3" : "ميزة 3"}</option>
                     </Select>
-                    Available <Switch colorScheme="blue" size="sm" />
+                    {language === "en" ? "Available" : "متاح"} <Switch colorScheme="blue" size="sm" />
                 </Flex>
+
             </Box>
-            <PropertyInfo />
-            <PropertyInfo />
-            <PropertyInfo />
-            <StreetInformation />
+            <PropertyInfo language={language}/>
+            <PropertyInfo language={language}/>
+            <PropertyInfo language={language}/>
+            <StreetInformation language={language}/>
         </>
     );
 }

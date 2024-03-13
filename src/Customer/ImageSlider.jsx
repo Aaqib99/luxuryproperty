@@ -11,7 +11,7 @@ import property7 from "../assets/4a.jpg";
 import property8 from "../assets/3a.jpg";
 import ProjectDescription from "./ProjectDescription";
 
-function ImageSlider() {
+function ImageSlider({language}) {
     const [selectedImage, setSelectedImage] = useState(0);
     const images = [
         { id: 1, url: property1 },
@@ -35,7 +35,7 @@ function ImageSlider() {
 
     return (
         <>
-            <Text fontSize="x-large" ml={"5rem"} mt={"2rem"}>Images & Media</Text>
+            <Text fontSize="x-large" ml={"5rem"} mt={"2rem"}>{language === "en" ? "Images & Media" : "الصور والوسائط"}</Text>
             <Box
                 borderWidth="1px"
                 borderRadius="md"
@@ -98,7 +98,7 @@ function ImageSlider() {
                     </>
                 )}
             </Box>
-            <ProjectDescription />
+            <ProjectDescription language={language}/>
         </>
     );
 }

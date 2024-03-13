@@ -13,7 +13,7 @@ const center = {
     lng: -38.523
 };
 
-export default function LocationNearby() {
+export default function LocationNearby({ language }) {
     const [showMapModal, setShowMapModal] = useState(false);
 
     const handleViewMap = () => {
@@ -26,7 +26,7 @@ export default function LocationNearby() {
 
     return (
         <>
-            <Text fontSize="x-large" ml={"5rem"} mt={"2rem"}>Location & Nearby</Text>
+            <Text fontSize="x-large" ml={"5rem"} mt={"2rem"}>{language === "en" ? "Location & Nearby" : "الموقع والقرب"}</Text>
             <Box
                 borderWidth="1px"
                 borderRadius="md"
@@ -72,7 +72,7 @@ export default function LocationNearby() {
                 </Modal>
             </Box>
             <Box>
-                <ImageSlider />
+                <ImageSlider language={language}/>
             </Box>
         </>
     );

@@ -16,7 +16,7 @@ import Footer from "../Footer/Footer";
 import RoomIncluded from "../Customer/RoomIncluded";
 import PropertyType from "../Customer/PropertyType";
 
-export default function PropertyDetail() {
+export default function PropertyDetail({ onLanguageChange, language }) {
     const [selectedImage, setSelectedImage] = useState(0);
 
     const images = [
@@ -35,13 +35,14 @@ export default function PropertyDetail() {
     // const selectedImage = 1;
     return (
         <>
-            <NavBar />
+            <NavBar onLanguageChange={onLanguageChange} language={language} />
             <Flex
                 flexDir={["column", "row"]}
                 alignItems="center"
 
                 justifyContent={["center", "space-between"]}
                 overflow="hidden"
+                marginTop={"8rem"}
             >
                 <Box>
                     <Box position="relative" mb={4} ml={"5rem"}>
@@ -69,7 +70,7 @@ export default function PropertyDetail() {
                             fontWeight="bold"
                             zIndex="1"
                         >
-                            FEATURED PLUS
+                            {language === "en" ? "FEATURED PLUS" : "ميزة إضافية"}
                         </Box>
                         <Box
                             position="absolute"
@@ -132,7 +133,7 @@ export default function PropertyDetail() {
                             display={{ base: "none", md: "flex" }}
                         >
                             <FaSave />
-                            <Text ml={2}>Save</Text>
+                            <Text ml={2}>{language === "en" ? "Save" : "حفظ"}</Text>
                         </Button>
                         <Button
                             variant="outline"
@@ -141,7 +142,7 @@ export default function PropertyDetail() {
                             display={{ base: "none", md: "flex" }}
                         >
                             <FaShareAlt />
-                            <Text ml={2}>Share</Text>
+                            <Text ml={2}>{language === "en" ? "Share" : "مشاركة"}</Text>
                         </Button>
                         <Button
                             variant="outline"
@@ -150,12 +151,12 @@ export default function PropertyDetail() {
                             display={{ base: "none", md: "flex" }}
                         >
                             <MdOutlineReportGmailerrorred />
-                            <Text ml={2}>Report Project</Text>
+                            <Text ml={2}>{language === "en" ? "Report Project" : "الإبلاغ عن المشروع"}</Text>
                         </Button>
                     </Flex>
                     <Flex alignItems="center">
                         <Image src={propertylogo} alt="Logo" style={{ width: "110px", height: "110px" }} />
-                        <Text ml={2}>Listed by</Text>
+                        <Text ml={2}>{language === "en" ? "Listed by" : "مدرج من طرف"}</Text>
                         <Button
                             variant="outline"
                             colorScheme="gray"
@@ -164,12 +165,12 @@ export default function PropertyDetail() {
                             size="sm"
                             borderColor="gray.200"
                         >
-                            Authorized Broker
+                            {language === "en" ? "Authorized Broker" : "وسيط معتمد"}
                         </Button>
                     </Flex>
                     <Text mb={4} fontWeight={"bold"} fontSize={"22px"}>شركة دار للتطوير العقاري</Text>
                     <Text mb={4}>Ref no. 100196 </Text>
-                    <Text mb={4} color={"gray.500"}> Last updated: 62 days ago</Text>
+                    <Text mb={4} color={"gray.500"}>{language === "en" ? "Last updated: 62 days ago" : "تم التحديث لآخر مرة: منذ 62 يومًا"}</Text>
                     <Flex mt={3}>
                         <Button
                             variant="outline"
@@ -177,7 +178,7 @@ export default function PropertyDetail() {
                             mr={3}
                             display={{ base: "none", md: "flex" }}
                         >
-                            Request Call Back
+                            {language === "en" ? "Request Call Back" : "طلب مكالمة"}
                         </Button>
                         <Button
                             variant="outline"
@@ -201,9 +202,9 @@ export default function PropertyDetail() {
                 </Box>
 
             </Flex >
-            <RoomIncluded />
-            <PropertyType />
-            <Footer />
+            <RoomIncluded language={language} />
+            <PropertyType language={language} />
+            <Footer language={language} />
         </>
     );
 }
